@@ -1,0 +1,34 @@
+{
+    "name": "nem-trezor-standalone",
+    "version": "0.0.0",
+    "browserify": {
+        "transform": [
+            ["babelify", { "presets": ["env"] }]
+        ]
+    },
+    "devDependencies": {
+        "babel-core": "^6.26.0",
+        "babel-preset-env": "^1.6.1",
+        "babelify": "^8.0.0",
+        "browserify": "^14.5.0",
+        "gulp": "^3.9.1",
+        "gulp-uglify": "^3.0.0",
+        "inline-source": "^5.2.6",
+        "through2": "^2.0.3",
+        "vinyl-buffer": "^1.0.1",
+        "vinyl-source-stream": "^2.0.0"
+    },
+    "dependencies": {
+        "angular": "^1.6.8",
+        "angular-animate": "^1.6.8",
+        "angular-aria": "^1.6.8",
+        "angular-file-saver": "^1.1.3",
+        "angular-material": "^1.1.5",
+        "angular-material-data-table": "^0.10.10",
+        "angular-messages": "^1.6.8",
+        "bigi": "^1.4.2",
+        "bip39": "^2.4.0",
+        "create-hmac": "^1.1.6",
+        "nem-sdk": "^1.6.2"
+    }
+}

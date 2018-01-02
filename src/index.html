@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Recover BIP39 Mnemonic</title>
+
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <link rel="stylesheet" href="node_modules/angular-material/angular-material.min.css">
+        <link rel="stylesheet" href="node_modules/angular-material-data-table/dist/md-data-table.min.css">
+    </head>
+    <body>
+        <div ng-app="App" ng-controller="MainCtrl">
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2>Recover BIP39 Mnemonic</h2>
+                </div>
+            </md-toolbar>
+            <md-content flex layout-padding>
+                <form novalidate>
+                    <div layout="row">
+                        <md-input-container class="md-block">
+                            <md-select ng-model="formData.network">
+                                <md-option ng-value="104" selected>NEM Mainnet</md-option>
+                                <md-option ng-value="-104">NEM Testnet</md-option>
+                                <md-option ng-value="96">Mijin</md-option>
+                            </md-select>
+                        </md-input-container>
+                        <md-input-container class="md-block" flex>
+                            <label>BIP-39 mnemonic</label>
+                            <input type="text" ng-model="formData.mnemonic" validate-mnemonic required>
+                        </md-input-container>
+                        <md-input-container class="md-block" flex>
+                            <label>BIP-39 passphrase</label>
+                            <input type="password" ng-model="formData.passphrase">
+                        </md-input-container>
+                    </div>
+                </form>
+                <form ng-show="accounts" name="downloadForm" novalidate ng-submit="downloadWallet()">
+                    <div layout="row">
+                        <md-input-container class="md-block" flex>
+                            <label>Wallet name</label>
+                            <input type="text" ng-model="walletName" required>
+                        </md-input-container>
+                        <md-input-container class="md-block" flex>
+                            <label>Wallet password</label>
+                            <input type="password" ng-model="password" required>
+                        </md-input-container>
+                        <md-input-container class="md-block" flex>
+                            <md-button type="submit" ng-disabled="downloadForm.$invalid">Download wallet</md-button>
+                        </md-input-container>
+                    </div>
+                </form>
+                <table md-table ng-show="accounts">
+                    <thead md-head>
+                        <tr md-row>
+                            <th md-column>BIP-32</th>
+                            <th md-column>Address</th>
+                            <th md-column>Private Key</th>
+                        </tr>
+                    </thead>
+                    <tbody md-body>
+                        <tr md-row ng-repeat="account in accounts">
+                            <td md-cell>{{ account.hdKeypath }}</td>
+                            <td md-cell>{{ account.address }}</td>
+                            <td md-cell>{{ account.privateKey }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </md-content>
+        </div>
+
+        <script src="index.js"></script>
+    </body>
+</html>
