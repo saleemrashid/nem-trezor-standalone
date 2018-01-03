@@ -55,7 +55,13 @@ angular-messages@^1.6.8:
   version "1.6.8"
   resolved "https://registry.yarnpkg.com/angular-messages/-/angular-messages-1.6.8.tgz#4f1090b6ee38081fd073c5dfb7576016d18fc458"
 
-angular@^1.6.8:
+angular-translate@^2.17.0:
+  version "2.17.0"
+  resolved "https://registry.yarnpkg.com/angular-translate/-/angular-translate-2.17.0.tgz#0871e50bec65eb30f6fbe6d83e4bee6bc5fcb474"
+  dependencies:
+    angular ">=1.2.26 <=1.6"
+
+"angular@>=1.2.26 <=1.6", angular@^1.6.8:
   version "1.6.8"
   resolved "https://registry.yarnpkg.com/angular/-/angular-1.6.8.tgz#5be378a58be91a5489e78b59c4518cd9fd273ffb"
 

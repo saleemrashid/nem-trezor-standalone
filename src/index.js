@@ -4,6 +4,8 @@ const bip39 = require("bip39");
 const HDNode = require("./util/hdnode");
 const nem = require("nem-sdk").default;
 
+const languages = require("./languages");
+
 const MAXIMUM_ACCOUNTS = 10;
 
 const app = angular.module("App", [
@@ -12,7 +14,16 @@ const app = angular.module("App", [
     require("angular-file-saver"),
     require("angular-material"),
     require("angular-material-data-table"),
+    require("angular-translate"),
 ]);
+
+app.config(["$translateProvider", ($translateProvider) => {
+    languages.forEach((language) => {
+        $translateProvider.translations(language.key, language.table);
+    });
+
+    $translateProvider.preferredLanguage(languages[0].key);
+}]);
 
 app.directive("validateMnemonic", () => ({
     require: "ngModel",
@@ -85,7 +96,14 @@ const createWalletFile = (wallet) => {
     return btoa(encoded);
 };
 
-app.controller("MainCtrl", ["$scope", "FileSaver", "Blob", ($scope, FileSaver, Blob) => {
+app.controller("MainCtrl", ["$scope", "$translate", "FileSaver", "Blob", ($scope, $translate, FileSaver, Blob) => {
+    $scope.language = $translate.proposedLanguage();
+    $scope.languages = languages;
+
+    $scope.updateLanguage = () => {
+        $translate.use($scope.language);
+    };
+
     $scope.formData = {
         network: 104
     };
