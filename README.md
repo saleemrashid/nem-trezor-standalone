@@ -14,7 +14,8 @@ required for this tool, allowing you to use it completely offline.
 
 1. Install [Yarn](https://yarnpkg.com/en/) for secure dependency management
 
-2. Build standalone `index.html`
+2. Build standalone `index.html` (this will be identical to the file included
+   in this repository)
 
 ```bash
 yarn
