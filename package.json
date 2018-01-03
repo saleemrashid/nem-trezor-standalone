@@ -1,10 +1,17 @@
 {
     "name": "nem-trezor-standalone",
     "version": "0.0.0",
+    "description": "Offline tool for recovering NEM private keys from BIP39 mnemonics",
+    "homepage": "https://github.com/saleemrashid/nem-trezor-standalone",
+    "license": "MIT",
+    "author": "Saleem Rashid <dev@saleemrashid.com>",
     "browserify": {
         "transform": [
             ["babelify", { "presets": ["env"] }]
         ]
+    },
+    "scripts": {
+        "build": "gulp"
     },
     "devDependencies": {
         "babel-core": "^6.26.0",

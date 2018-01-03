@@ -10,7 +10,7 @@ const uglify = require("gulp-uglify");
 gulp.task("javascript", () => {
     return browserify("src/index.js")
         .bundle()
-        .pipe(source("index.js"))
+        .pipe(source("bundle.js"))
         .pipe(buffer())
         .pipe(gulp.dest("."))
 });
