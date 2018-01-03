@@ -3,6 +3,7 @@
     <head>
         <title>Recover BIP39 Mnemonic</title>
 
+        <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
 
         <link rel="stylesheet" href="node_modules/angular-material/angular-material.min.css">
@@ -16,9 +17,16 @@
                 </div>
             </md-toolbar>
             <md-content flex layout-padding>
+                <div>
+                    <h1>Use on an offline computer</h1>
+                    <p>If you haven't already, download this page and use it on
+                    an offline computer to keep your private keys secure!</p>
+                </div>
                 <form novalidate>
+                    <h2>Enter mnemonic to recover NEM accounts</h2>
                     <div layout="row">
                         <md-input-container class="md-block">
+                            <label>Network</label>
                             <md-select ng-model="formData.network">
                                 <md-option ng-value="104" selected>NEM Mainnet</md-option>
                                 <md-option ng-value="-104">NEM Testnet</md-option>
@@ -36,6 +44,7 @@
                     </div>
                 </form>
                 <form ng-show="accounts" name="downloadForm" novalidate ng-submit="downloadWallet()">
+                    <h2>Enter a wallet name and password to import into NanoWallet</h2>
                     <div layout="row">
                         <md-input-container class="md-block" flex>
                             <label>Wallet name</label>
@@ -50,22 +59,25 @@
                         </md-input-container>
                     </div>
                 </form>
-                <table md-table ng-show="accounts">
-                    <thead md-head>
-                        <tr md-row>
-                            <th md-column>BIP-32</th>
-                            <th md-column>Address</th>
-                            <th md-column>Private Key</th>
-                        </tr>
-                    </thead>
-                    <tbody md-body>
-                        <tr md-row ng-repeat="account in accounts">
-                            <td md-cell>{{ account.hdKeypath }}</td>
-                            <td md-cell>{{ account.address }}</td>
-                            <td md-cell>{{ account.privateKey }}</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div ng-show="accounts">
+                    <h2>Generated accounts</h2>
+                    <table md-table>
+                        <thead md-head>
+                            <tr md-row>
+                                <th md-column>BIP-32</th>
+                                <th md-column>Address</th>
+                                <th md-column>Private Key</th>
+                            </tr>
+                        </thead>
+                        <tbody md-body>
+                            <tr md-row ng-repeat="account in accounts">
+                                <td md-cell>{{ account.hdKeypath }}</td>
+                                <td md-cell>{{ account.address }}</td>
+                                <td md-cell>{{ account.privateKey }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </md-content>
         </div>
 
