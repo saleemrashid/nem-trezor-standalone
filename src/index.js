@@ -17,6 +17,15 @@ const app = angular.module("App", [
 app.directive("validateMnemonic", () => ({
     require: "ngModel",
     link (scope, element, attrs, ngModel) {
+        ngModel.$parsers.push((viewValue) => {
+            const modelValue = viewValue
+                .trim()
+                .toLowerCase()
+                .replace(/\s+/g, " ");
+
+            return modelValue;
+        });
+
         ngModel.$validators.mnemonic = (modelValue, viewValue) => {
             const mnemonic = modelValue || viewValue;
 
