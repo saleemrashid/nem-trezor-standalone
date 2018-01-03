@@ -7,7 +7,14 @@
     "author": "Saleem Rashid <dev@saleemrashid.com>",
     "browserify": {
         "transform": [
-            ["babelify", { "presets": ["env"] }]
+            [
+                "babelify",
+                {
+                    "presets": [
+                        "env"
+                    ]
+                }
+            ]
         ]
     },
     "scripts": {
