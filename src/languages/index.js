@@ -4,4 +4,9 @@ module.exports = [
         key: "en",
         table: require("./en"),
     },
+    {
+        name: "Nederlands",
+        key: "nl",
+        table: require("./nl"),
+    },    
 ];
