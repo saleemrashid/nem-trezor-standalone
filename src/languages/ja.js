@@ -1,5 +1,5 @@
 module.exports = {
-    TITLE_OFFLINE_WARNING: "利用時はコンピューターをネットワークから切断してください！",
+    TITLE_OFFLINE_WARNING: "利用時はコンピューターをネットワークから切断してください。",
     CONTENT_OFFLINE_WARNING: "まだダウンロードしていない場合には、このページをダウンロードして、オフラインコンピュータで利用する事で秘密鍵を安全に保ちます。",
 
     LABEL_APP_LANGUAGE: "言語",
