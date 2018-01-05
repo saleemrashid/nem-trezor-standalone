@@ -18,12 +18,12 @@
             </md-toolbar>
             <md-content flex layout-padding>
                 <div>
-                    <h1 translate>TITLE_OFFLINE_WARNING</h1>
-                    <p translate>CONTENT_OFFLINE_WARNING</p>
+                    <h1>{{ "TITLE_OFFLINE_WARNING" | translate }}</h1>
+                    <p>{{ "CONTENT_OFFLINE_WARNING" | translate }}</p>
                 </div>
-                <div layout="row">
-                    <md-input-container class="md-block" flex="20">
-                        <label translate>LABEL_APP_LANGUAGE</label>
+                <div layout="column" layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm="20">
+                        <label>{{ "LABEL_APP_LANGUAGE" | translate }}</label>
                         <md-select ng-model="language" ng-change="updateLanguage()">
                             <md-option ng-repeat="language in languages" ng-value="language.key">
                                 {{ language.name }}
@@ -32,10 +32,10 @@
                     </md-input-container>
                 </div>
                 <form novalidate>
-                    <h2 translate>TITLE_RECOVER_WALLET</h2>
-                    <div layout="row">
-                        <md-input-container class="md-block" flex="20">
-                            <label translate>LABEL_NETWORK</label>
+                    <h2>{{ "TITLE_RECOVER_WALLET" | translate }}</h2>
+                    <div layout="column" layout-gt-sm="row">
+                        <md-input-container class="md-block" flex-gt-sm="20">
+                            <label>{{ "LABEL_NETWORK" | translate }}</label>
                             <md-select ng-model="formData.network">
                                 <md-option ng-value="104" selected>NEM Mainnet</md-option>
                                 <md-option ng-value="-104">NEM Testnet</md-option>
@@ -43,33 +43,33 @@
                             </md-select>
                         </md-input-container>
                         <md-input-container class="md-block" flex>
-                            <label translate>LABEL_BIP39_MNEMONIC</label>
+                            <label>{{ "LABEL_BIP39_MNEMONIC" | translate }}</label>
                             <input type="text" ng-model="formData.mnemonic" validate-mnemonic required>
                         </md-input-container>
                         <md-input-container class="md-block" flex>
-                            <label translate>LABEL_BIP39_PASSPHRASE</label>
+                            <label>{{ "LABEL_BIP39_PASSPHRASE" | translate }}</label>
                             <input type="password" ng-model="formData.passphrase">
                         </md-input-container>
                     </div>
                 </form>
                 <form ng-show="accounts" name="downloadForm" novalidate ng-submit="downloadWallet()">
-                    <h2 translate>TITLE_DOWNLOAD_WALLET</h2>
-                    <div layout="row">
+                    <h2>{{ "TITLE_DOWNLOAD_WALLET" | translate }}</h2>
+                    <div layout="column" layout-gt-sm="row">
                         <md-input-container class="md-block" flex>
-                            <label translate>LABEL_WALLET_NAME</label>
+                            <label>{{ "LABEL_WALLET_NAME" | translate }}</label>
                             <input type="text" ng-model="walletName" required>
                         </md-input-container>
                         <md-input-container class="md-block" flex>
-                            <label translate>LABEL_WALLET_PASSWORD</label>
+                            <label>{{ "LABEL_WALLET_PASSWORD" | translate }}</label>
                             <input type="password" ng-model="password" required>
                         </md-input-container>
                         <md-input-container class="md-block" flex>
-                            <md-button type="submit" ng-disabled="downloadForm.$invalid" translate>BUTTON_DOWNLOAD_WALLET</md-button>
+                            <md-button type="submit" ng-disabled="downloadForm.$invalid">{{ "BUTTON_DOWNLOAD_WALLET" | translate }}</md-button>
                         </md-input-container>
                     </div>
                 </form>
                 <div ng-show="accounts">
-                    <h2 translate>TITLE_GENERATED_TABLE</h2>
+                    <h2>{{ "TITLE_GENERATED_TABLE" | translate }}</h2>
                     <table md-table>
                         <thead md-head>
                             <tr md-row>
