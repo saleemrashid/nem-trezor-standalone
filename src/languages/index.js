@@ -8,5 +8,5 @@ module.exports = [
         name: "Nederlands",
         key: "nl",
         table: require("./nl"),
-    },    
+    },
 ];
