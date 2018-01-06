@@ -4,9 +4,9 @@ module.exports = {
 
     LABEL_APP_LANGUAGE: "Taal",
 
-    TITLE_RECOVER_WALLET: "Vul 'mnemonic' in om de NEM accounts te herstellen",
+    TITLE_RECOVER_WALLET: "Vul de herstel woorden in om de NEM accounts te herstellen",
     LABEL_NETWORK: "Netwerk",
-    LABEL_BIP39_MNEMONIC: "BIP-39 'mnemonic'",
+    LABEL_BIP39_MNEMONIC: "BIP-39 herstel woorden (24 stuks)",
     LABEL_BIP39_PASSPHRASE: "BIP-39 wachtwoordzin",
 
     TITLE_DOWNLOAD_WALLET: "Vul een portemonnee naam en wachtwoord in om voor NanoWallet te exporeteren",
