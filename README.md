@@ -5,10 +5,19 @@ them into NanoWallet
 
 ## Usage
 
-You should use this tool on an offline computer.
+You should **only** use this tool on an offline computer.
+
+ * It will protect your private keys from malware.
+
+ * Without network access, a malicious version of the code cannot make
+   transactions or send your private keys to a remote server.
+
+Open [`index.html`](index.html) and click the Download button.
 
 `index.html` is a standalone HTML page containing all the CSS and JavaScript
 required for this tool, allowing you to use it completely offline.
+
+**Do not use `src/index.html` as it will not work offline.**
 
 ## Build
 
