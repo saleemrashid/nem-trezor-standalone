@@ -9,6 +9,7 @@ module.exports = [
         key: "ja",
         table: require("./ja"),
     },
+    {
         name: "Nederlands",
         key: "nl",
         table: require("./nl"),
